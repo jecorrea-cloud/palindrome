@@ -3,8 +3,15 @@
 
 function palindrome(string) {
   let lastChar = string.length() - 1;
+
   // Base cases
   if (string[0] != string[lastChar]) return false;
 
   if (string.length() < 2) return true;
+
+  // Recursive case
+  let subString = string(1, lastChar - 1);
+  if (palindrome(subString)) return true;
+
+  return false;
 }
